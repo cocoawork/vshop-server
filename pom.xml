@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <modules>
+        <module>shop-common</module>
+        <module>shop-dao</module>
+        <module>shop-service-api</module>
+        <module>shop-service</module>
+        <module>shop-web-api</module>
+    </modules>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.4.1</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>top.cocoawork</groupId>
+    <artifactId>shop</artifactId>
+    <version>${shop.parent.version}</version>
+    <packaging>pom</packaging>
+    <description>shop app!</description>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <shop.parent.version>0.0.1-SNAPSHOT</shop.parent.version>
+        <shop.common.version>0.0.1-SNAPSHOT</shop.common.version>
+        <shop.dao.version>0.0.1-SNAPSHOT</shop.dao.version>
+        <shop.service.version>0.0.1-SNAPSHOT</shop.service.version>
+        <shop.service.api.version>0.0.1-SNAPSHOT</shop.service.api.version>
+        <shop.web.api.version>0.0.1-SNAPSHOT</shop.web.api.version>
+        <mybatis-plus.starter.version>3.4.0</mybatis-plus.starter.version>
+        <mysql.version>8.0.21</mysql.version>
+        <validation-api.version>2.0.1.Final</validation-api.version>
+        <hibernate.validator.version>6.1.0.Final</hibernate.validator.version>
+        <lombok.version>1.18.12</lombok.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <dependency>
+                <groupId>top.cocoawork</groupId>
+                <artifactId>shop-common</artifactId>
+                <version>${shop.common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>top.cocoawork</groupId>
+                <artifactId>shop-dao</artifactId>
+                <version>${shop.dao.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>top.cocoawork</groupId>
+                <artifactId>shop-service</artifactId>
+                <version>${shop.service.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>top.cocoawork</groupId>
+                <artifactId>shop-service-api</artifactId>
+                <version>${shop.service.api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>top.cocoawork</groupId>
+                <artifactId>shop-web-api</artifactId>
+                <version>${shop.web.api.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.starter.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <scope>runtime</scope>
+                <version>${mysql.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.validation</groupId>
+                <artifactId>validation-api</artifactId>
+                <version>${validation-api.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>${hibernate.validator.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+
+
+
+        </dependencies>
+    </dependencyManagement>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
